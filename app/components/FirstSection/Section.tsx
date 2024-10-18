@@ -29,30 +29,32 @@ const Section: React.FC<SectionProps> = ({
 
   return (
     <div
-      className={`flex flex-col items-center justify-center relative bg-white h-screen w-full ${className}`}
+      className={`flex flex-col items-start justify-start relative bg-white h-full  w-full ${className}`}
     >
-      <div className="md:m-8 text-left flex-grow">
+      <div className="md:m-8  text-left ">
         {currentData ? (
           <>
-            <h1 className="text-2xl md:text-6xl font-bold text-black">
-              {currentData.title}
-            </h1>
-
-            <p className="text-gray-500 text-lg md:text-xl max-w-lg leading-relaxed mb-8">
-              {currentData.description}
-            </p>
+            <div className="p-4 w-full h-80">
+              {" "}
+              <h1 className="text-2xl md:text-6xl font-bold text-black">
+                {currentData.title}
+              </h1>
+              <p className="text-gray-500 text-lg md:text-xl max-w-lg  ">
+                {currentData.description}
+              </p>
+            </div>
           </>
         ) : (
           <p className="text-red-500">No content available.</p>
         )}
 
-        <div className="flex items-start justify-start space-x-2 text-lg tracking-[2rem] font-semibold mb-32 text-black cursor-pointer">
+        <div className="flex items-start justify-start space-x-2 text-lg tracking-[2rem] font-semibold  text-black cursor-pointer">
           <span>SHOP NOW</span>
           <span>&rarr;</span>
         </div>
       </div>
 
-      <div className="absolute bottom-4 left-0  flex justify-center space-x-4 bg-black p-4">
+      <div className=" flex-row flex justify-start  items-start text-left space-x-4 bg-black p-4">
         <button
           onClick={handlePrecedent}
           disabled={currentIndex === 0}
