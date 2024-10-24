@@ -9,23 +9,24 @@ interface FirstSectionProps {
 
 const FirstSection: React.FC<FirstSectionProps> = ({ className }) => {
   const [currentIndex, setCurrentIndex] = useState(1);
+
   return (
-    <div
-      className={`flex md:flex-row flex-col w-full   ${className}`}
-      style={{ minHeight: "100vh" }}
-    >
-      <div className="w-full md:w-1/2 flex-grow md:flex-row flex:col justify-center items-center ">
+    <div className={`flex md:flex-row flex-col w-full ${className}`}>
+      <div
+        className="w-full md:w-[760px] flex-grow md:flex-row flex-col justify-center 
+      items-center"
+      >
         <Hero
-          className="w-full md:h-3/4 h-96"
+          className="w-full md:h-96 h-56"
           currentIndex={currentIndex}
           setCurrentIndex={setCurrentIndex}
         />
       </div>
-      <div className="w-full md:w-1/2 md:h-3/4 flex flex-col flex-grow justify-center items-start h-full">
+      <div className="w-full md:w-[600px] flex flex-col justify-start items-center px-10 py-2 h-full">
         <Section
           currentIndex={currentIndex}
           setCurrentIndex={setCurrentIndex}
-          className="w-full md:h-3/4 h-96"
+          className="w-full"
         />
       </div>
     </div>
