@@ -28,33 +28,35 @@ const Section: React.FC<SectionProps> = ({
   const currentData = data[currentIndex];
 
   return (
-    <div
-      className={`flex flex-col items-start justify-start relative bg-white h-full  w-full ${className}`}
-    >
-      <div className="md:m-8  text-left ">
+    <div className={`flex flex-col relative  bg-white  w-full ${className}`}>
+      <div className="   ">
         {currentData ? (
           <>
-            <div className="p-4 w-full h-80">
+            <div className="md:w-full py-4 ">
               {" "}
-              <h1 className="text-2xl md:text-6xl font-bold text-black">
+              <h1 className="text-xl md:text-4xl font-bold text-black">
                 {currentData.title}
               </h1>
-              <p className="text-gray-500 text-lg md:text-xl max-w-lg  ">
+              <p className="text-gray-500 text-lg md:text-xl  max-w-lg  ">
                 {currentData.description}
               </p>
+              <div
+                className="flex items-start justify-start space-x-2 text-lg tracking-[2rem]
+               font-bold  text-black cursor-pointer "
+              >
+                <span>SHOP NOW</span>
+                <span>&rarr;</span>
+              </div>
             </div>
           </>
         ) : (
           <p className="text-red-500">No content available.</p>
         )}
-
-        <div className="flex items-start justify-start space-x-2 text-lg tracking-[2rem] font-semibold  text-black cursor-pointer">
-          <span>SHOP NOW</span>
-          <span>&rarr;</span>
-        </div>
       </div>
-
-      <div className=" flex-row flex justify-start  items-start text-left space-x-4 bg-black p-4">
+      <div
+        className="absolute hidden md:flex flex-row justify-start  gap-6
+              space-x-2 bg-black p-2 w-44 top-72 right-96"
+      >
         <button
           onClick={handlePrecedent}
           disabled={currentIndex === 0}
