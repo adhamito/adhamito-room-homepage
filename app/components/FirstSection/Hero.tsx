@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import NavBar from "../NavBar";
+import Image from "next/image"; // Import Image from next/image
 import img1 from "../images/desktop-image-hero-1.jpg";
 import img2 from "../images/desktop-image-hero-2.jpg";
 import img3 from "../images/desktop-image-hero-3.jpg";
@@ -31,23 +32,24 @@ const Hero: React.FC<HeroProps> = ({
     }
   };
 
-  const imgSrc = images[currentIndex].src;
-
   return (
     <div
-      className={`${className} w-full h-full flex justify-center items-center relative`}
-      style={{
-        backgroundImage: `url(${imgSrc})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundColor: "gray",
-      }}
+      className={`${className} md:max-w-full md:h-96 h-56 w-full md:flex md:justify-center 
+      md:items-center relative`}
     >
       <NavBar isMobile={isMobile} setIsMobile={setIsMobile} />
 
-      {/* Navigation buttons */}
-      <div className="absolute bottom-0 right-0 space-x-4 bg-black md:hidden block">
+      <div className="absolute inset-0">
+        <Image
+          src={images[currentIndex]}
+          alt={`Hero Image ${currentIndex + 1}`}
+          layout="fill"
+          objectFit="cover"
+          priority
+        />
+      </div>
+
+      <div className="absolute bottom-0 right-0 space-x-4 bg-black block md:hidden">
         <button
           onClick={handlePrecedent}
           disabled={currentIndex === 0}
