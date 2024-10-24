@@ -12,12 +12,8 @@ const NavBar: React.FC<NavBarProps> = ({ isMobile, setIsMobile }) => {
   };
 
   return (
-    <nav className="bg-transparent absolute top-0 w-full p-4">
-      <div className="max-w-screen-xl flex items-center justify-start mx-auto gap-4">
-        <a href="#" className="text-white font-bold text-2xl tracking-widest">
-          room
-        </a>
-
+    <nav className="bg-transparent absolute top-0 w-full p-2 z-10">
+      <div className="max-w-screen-xl flex items-center justify-between md:justify-start mx-auto gap-4">
         <button
           data-collapse-toggle="navbar-default"
           type="button"
@@ -51,9 +47,15 @@ const NavBar: React.FC<NavBarProps> = ({ isMobile, setIsMobile }) => {
             )}
           </svg>
         </button>
+        <a
+          href="#"
+          className="text-white font-bold md:text-2xl tracking-widest md:ml-8 text-center md:text-left"
+        >
+          room
+        </a>
+        <div />
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex md:items-center space-x-4 ml-8">
+        <div className="hidden md:flex md:items-center space-x-4 ml-16">
           <a href="#" className="text-white hover:text-gray-400">
             home
           </a>
@@ -69,7 +71,10 @@ const NavBar: React.FC<NavBarProps> = ({ isMobile, setIsMobile }) => {
         </div>
 
         {isMobile && (
-          <div className="absolute top-0 w-full h-full bg-white md:hidden flex flex-row justify-between">
+          <div
+            className="absolute top-0 w-full h-full bg-white md:hidden flex flex-row justify-between 
+          rounded-2xl"
+          >
             {/* Close button */}
             <div className="flex  ">
               <button
@@ -77,7 +82,7 @@ const NavBar: React.FC<NavBarProps> = ({ isMobile, setIsMobile }) => {
                 className="text-black hover:text-gray-400 focus:outline-none"
               >
                 <svg
-                  className="w-8 h-8"
+                  className="w-4 h-4"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -96,22 +101,22 @@ const NavBar: React.FC<NavBarProps> = ({ isMobile, setIsMobile }) => {
             {/* Menu items */}
             <ul className="flex flex-row justify-end items-center gap-4 mr-6   ">
               <li>
-                <a href="#" className="text-black text-xl">
+                <a href="#" className="text-black text-base">
                   home
                 </a>
               </li>
               <li>
-                <a href="#" className="text-black text-xl">
+                <a href="#" className="text-black text-base">
                   shop
                 </a>
               </li>
               <li>
-                <a href="#" className="text-black text-xl">
+                <a href="#" className="text-black text-base">
                   about
                 </a>
               </li>
               <li>
-                <a href="#" className="text-black text-xl">
+                <a href="#" className="text-black text-base ">
                   contact
                 </a>
               </li>
